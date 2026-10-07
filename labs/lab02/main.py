@@ -2,7 +2,7 @@
 # Include your course number, student first and last name, and date in the comment header
 # CS 31 Josh L. 10-7-26
 
-print("My Quiz on <choice>")
+print("My Quiz on RANDOMNESS")
 print() # prints an empty line
 print("* " * 20) #print a line of 20 astericks
 
@@ -14,7 +14,7 @@ print(f"Hello, {username}!") #f-string format
 
 # Ask if they want to take a quiz
 print()
-start_quiz = input("Do you want to take my awesome quiz? Y/N ")
+start_quiz = input("Do you want to take my random quiz? Y/N ")
 if start_quiz.upper() == "Y": #if the student inputs a lower case you can do if start_quiz.upper()
     print("Great! Let's get started!")
     # put our quiz questions here all indented
@@ -24,6 +24,8 @@ if start_quiz.upper() == "Y": #if the student inputs a lower case you can do if 
     counter = 0
 
     # Question 1
+    print()
+    print(">>>>QUESTION 1<<<<")
     q1 = int(input("How would Python solve 5 * 5? "))
     if q1 == 25:
         # update my counter
@@ -48,10 +50,50 @@ if start_quiz.upper() == "Y": #if the student inputs a lower case you can do if 
     else: #INCORRECT
         print("Sorry. That is not correct. ")
     # Question 3
-
+    print()
+    print(">>>>QUESTION 3 :)<<<<")
+    print("What is another way to print a string with a variable within it?")
+    print(" A - f-string format")
+    print(" B - camelCasing()")
+    print(" C - print")
+    print(" D - sudo apt")
+    q3 = input ("Choose answer please...")
+    if q3.upper() == "A":
+            #update my counter because they got the answer right
+            counter += 1 # shorthand for counter = counter + 1
+            print("Yes! You are correct!")
+    else:  #INCORRECT
+            print("Sorry. Not even close...")
     # Question 4
-
+    print()
+    print(">>>>QUESTION 4<<<<")
+    print("Which hero is the best?")
+    print(" A - Superman")
+    print(" B - Batman")
+    print(" C - Joker")
+    print(" D - Hulk")    
+    q4 = input ("Choose answer please...")
+    if q4.upper() == "B":
+                #update my counter because they got the answer right
+                counter += 1 # shorthand for counter = counter + 1
+                print("Yes! You are correct!")
+    else:  #INCORRECT
+                print("Sorry. Not even close...")
     # Question 5
+    print()
+    print(">>>>QUESTION 5<<<<")
+    print("If i were to turn around, how many degrees is that?")
+    print(" A - 180")
+    print(" B - 360")
+    print(" C - 500")
+    print(" D - 100")    
+    q5 = input ("Choose answer please...")
+    if q5.upper() == "A":
+                    #update my counter because they got the answer right
+                    counter += 1 # shorthand for counter = counter + 1
+                    print("Yes! You are correct!")
+    else:  #INCORRECT
+                    print("Sorry. Not even close...")
 
     # Output the score
     print("* * * * YOUR FINAL SCORE * * * *")
@@ -62,9 +104,9 @@ if start_quiz.upper() == "Y": #if the student inputs a lower case you can do if 
     if counter == 5:
         print("You are big brain!")
     elif counter >= 3 and counter < 5:
-        print("Mid af bro.")
+        print("Super mid bro.")
     elif counter >=1 and counter < 3:
-        print("tung tung sahur.")
+        print("not good brobro.")
     else:
         print("Did you even try?")
 
