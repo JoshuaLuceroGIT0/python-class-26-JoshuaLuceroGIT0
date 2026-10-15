@@ -1,6 +1,6 @@
 # Starting file for LAB 3-1
 # Include your course number, student first and last name, and date in the comment header
-
+# CS 31 Josh Lucero 10 - 14 - 26
 # display a welcome message
 print("The Miles Per Gallon program")
 print()
