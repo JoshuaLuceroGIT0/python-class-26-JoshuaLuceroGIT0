@@ -1,6 +1,7 @@
 # Starting file for PROJECT 1
 # Include your course number, student first and last name, and date in the comment header
 # CS 31 - 72473 Josh Lucero 11/21/26
+#Programming Project 1: Simulated Sales Pitch
 
 print("~~~~Hello, I am spaghetti.io. Would you like some spaghetti?~~~~~")
 start_sales = input("Y or N   ")
