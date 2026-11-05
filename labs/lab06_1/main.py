@@ -1,41 +1,53 @@
 # Starting file for LAB 6-1
 # Include your course number, student first and last name, and date in the comment header
+# CS 31, josh lucero, 11-4-26
+
+import statistics 
 
 def display_welcome():
     print("The Test Scores program")
     print("Enter 'x' to exit")
     print("")
 
+
 def get_scores():
-    score_total = 0
-    counter = 0
+    scores = []
     while True:
         score = input("Enter test score: ")
         if score == "x":
-            return  score_total, counter
+            return scores
         else:
             score = int(score)
-            if score >= 0 and score <= 100:
-                score_total += score
-                counter += 1 
+            if score >= 0 and score <= 120:
+                scores.append(score)
             else:
-                print("Test score must be from 0 through 100. " +
+                print("Test score must be from 0 through 120. " +
                       "Score discarded. Try again.")
 
-def process_scores(score_total, count):
-    # calculate average score
-    average = score_total / count
-                
+def process_scores(scores):
+    total_scores = 0
+    for thisscore in scores:
+        total_scores += thisscore
+    
+
+    average_score = round(total_scores/len(scores))
+
+    median = statistics.median(scores)
+
     # format and display the result
     print()
-    print("Score total:       ", score_total)
-    print("Number of Scores:  ", count)
-    print("Average Score:     ", average)
+    print("Score total:       ", )
+    print("Number of Scores:  ", len(scores))
+    print("Average Score:     ", )
+    print("Lowest Age: ", min(scores))
+    print("Highest Age: ", max(scores))
+    print("Median Score:      ", median)
+
 
 def main():
     display_welcome()
-    score_total, count = get_scores()
-    process_scores(score_total, count)
+    scores = get_scores()
+    process_scores(scores)
     print("")
     print("Bye!")
 
