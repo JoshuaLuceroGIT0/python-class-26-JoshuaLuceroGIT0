@@ -1,6 +1,7 @@
 # Starting file for LAB 9
 # Include your course number, student first and last name, and date in the comment header
-
+# CS 31 Josh Lucero, 11-18-26
+# Star trek 
 def main():
     full_name = get_full_name()
     print()

@@ -1,8 +1,10 @@
 # Starting file for LAB 8
 # Include your course number, student first and last name, and date in the comment header
+# CS 31 Josh Lucero, 11-18-26
 
 from decimal import Decimal
 from decimal import ROUND_HALF_UP
+import locale as lc 
 
 # display a title
 print("The Invoice program")
@@ -28,17 +30,33 @@ while choice == "y":
     discount = order_total * discount_percent
     discount = discount.quantize(Decimal("1.00"), ROUND_HALF_UP)                                
     subtotal = order_total - discount
+    # add shipping costs
+    shipping_percent = Decimal(".085")
+    shipping_cost = subtotal * shipping_percent
+    shipping_cost = shipping_cost.quantize(Decimal("1.00"), ROUND_HALF_UP)
     tax_percent = Decimal(".05")
     sales_tax = subtotal * tax_percent
     sales_tax = sales_tax.quantize(Decimal("1.00"), ROUND_HALF_UP)                                 
     invoice_total = subtotal + sales_tax
 
+    # add the spec format values
+    spec = "10,"
+    spec_currency = ">10"
+    spec_literal = 20
+
+    # work with locale to include a $ in the decimal value
+    lc.setlocale(lc.LC_ALL, 'en_US.UTF-8') # us locale for Windows
+    order_total = lc.currency(order_total, grouping=True)
+    invoice_total = lc.currency(invoice_total, grouping=True)
+
+
     # display the results
-    print(f"Order total:        {order_total:10,}")
-    print(f"Discount amount:    {discount:10,}")
-    print(f"Subtotal:           {subtotal:10,}")
-    print(f"Sales tax:          {sales_tax:10,}")
-    print(f"Invoice total:      {invoice_total:10,}")
+    print(f"{'Order total:':{spec_literal}}'{order_total:{spec_currency}}")
+    print(f"{'Discount amount:':{spec_literal}}{discount:{spec}}")
+    print(f"{'Subtotal:':{spec_literal}}{subtotal:{spec}}")
+    print(f"{'Shipping cost:':{spec_literal}}{shipping_cost:{spec}}")
+    print(f"{'Sales tax:':{spec_literal}}{sales_tax:{spec}}")
+    print(f"{'Invoice total:':{spec_literal}}{invoice_total:{spec_currency}}")
     print()
 
     choice = input("Continue? (y/n): ")    
