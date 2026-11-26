@@ -181,7 +181,7 @@ def main():
         display_character(opponent)
 
         battle_again = ask_yes_no("\n" \
-        "Would you like to battle again? (y/n): ")
+        " Would you like them to battle? (y/n): ")
         #create a while loop to battle again
         while battle_again:
             #Return both characters' health 
